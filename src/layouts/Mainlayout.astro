@@ -1,0 +1,188 @@
+---
+
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Astro</title>
+	</head>
+	<body>
+<header>   <nav class="navigation">
+    <a href="#" class="logo">Logo</a>
+    <ul class="menu">
+      <li class="menu-item">
+        <a href="#" class="menu-link">FESTIVALEN <i class="arrowdown"></i></span></a>
+        <ul class="sub-menu">
+          <li><a href="#" class="undermenu">FESTIVAL MAP</a></li>
+          <li><a href="#"class="undermenu">TIDLIGERE FESTIVALER</a></li>
+          <li>
+            <a href="../pages/festivalen.astro"class="undermenu" >PROGRAM</span></a>
+          </li>
+        </ul>
+      </li>
+      <li class="menu-item">
+        <a href="#" class="menu-link">BOOK</a>
+      </li>
+      <li class="menu-item">
+        <a href="#" class="menu-link">OM OS <i class="arrowdown"></i></span></a>
+        <ul class="sub-menu">
+          <li><a href="#" class="undermenu">HVEM ER VI</a></li>
+          <li><a href="#" class="undermenu">HVEM ER KUNSTNERE</a></li>
+          <li><a href="#" class="undermenu">KONTAKT</a></li>
+        </ul>
+      </li>
+      <li class="divider">|</li>
+      <li class="menu-item">
+        <a href="#" class="gradient-text">DA</a>
+      </li>
+      <li class="menu-item">
+        <a href="#" class="menu-link">EN</a>
+      </li>
+      <li 
+	  </li>
+    </ul>
+  </nav></header>
+<main> 
+    <slot/>
+</main>
+<footer></footer>
+	</body>
+
+
+<script>
+
+</script>
+
+</html>
+
+<style>
+	h1, h2, h3, p, li, a {font-family: Arial, Helvetica, sans-serif;
+	}
+.navigation {
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: black;
+  color: #fff;
+  text-decoration: none;
+
+}
+
+.logo {
+  text-decoration: none;
+  color: #fff;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  text-decoration: none;
+  position: relative;
+}
+
+.menu-item {
+  position: relative;
+  margin-left: 20px;
+  list-style: none;
+  text-decoration: none;
+}
+.gradient-text {
+  background-color: red;
+  text-decoration: none;
+  background-image: linear-gradient(to right, rgba(68, 191, 190, 1), rgba(85, 129, 205, 1),rgba(182, 90, 167, 1),rgba(245, 77, 71, 1));
+  
+  /* Set the background size and repeat properties. */
+  background-size: 100%;
+  background-repeat: repeat;
+
+  /* Use the text as a mask for the background. */
+  /* This will show the gradient as a text color rather than element bg. */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+}
+
+.menu-link {
+  color: #fff;
+  position: relative;
+  list-style: none;
+  text-decoration: none;
+}
+.menu-link:hover {
+  text-decoration: none;
+  background-image: linear-gradient(to right, rgba(68, 191, 190, 1), rgba(85, 129, 205, 1),rgba(182, 90, 167, 1),rgba(245, 77, 71, 1));
+  background-size: 100%;
+  background-repeat: repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+}
+.sub-menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  right: 50px;
+  display: none;
+  background-color: #00000085; /* Ændre farven efter dine behov */
+  padding: 10px;
+  list-style: none;
+  text-decoration: none;
+  text-align: center;
+  justify-content: space-between;
+  width: 200%;
+}
+.sub-menu li {
+  display: inline-block;
+  margin: 20px 0px;
+  flex-grow: 1;
+}
+
+.sub-menu li:hover {
+  border-bottom: 2px solid white; /* Tilføjer en streg under teksten ved hover */
+}
+
+.menu-item:hover .sub-menu {
+  display: block;
+}
+
+.sub-menu li {
+  margin-left: 0;
+}
+
+
+.arrowdown {
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 5px;
+  padding-bottom: 5px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  margin-bottom: 3px;
+  margin-left: 3px;
+}
+.arrowdown:hover {
+border-color: rgba(68, 191, 190, 1);
+}
+
+.undermenu{
+	color: white;
+	text-decoration: none;
+}
+.divider {
+  margin: 0 10px;
+  color: #fff;
+}
+
+
+</style>
+
