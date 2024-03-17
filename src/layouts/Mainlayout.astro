@@ -11,8 +11,10 @@
 		<title>Astro</title>
 	</head>
 	<body>
-<header>   <nav class="navigation">
-    <a href="#" class="logo">Logo</a>
+<header>   
+  <nav class="navigation">
+    <a href="src/pages/index.astro" class="logo"> <img src="src/pics/logo.svg" alt=""></a>
+    <div class="burger-icon">&#9776;</div>
     <ul class="menu">
       <li class="menu-item">
         <a href="#" class="menu-link">FESTIVALEN <i class="arrowdown"></i></span></a>
@@ -35,33 +37,57 @@
           <li><a href="#" class="undermenu">KONTAKT</a></li>
         </ul>
       </li>
-      <li class="divider">|</li>
-      <li class="menu-item">
+      
+        <li class="divider">|</li>
+        <div class="grid">
+        <li class="menu-item">
         <a href="#" class="gradient-text">DA</a>
       </li>
       <li class="menu-item">
         <a href="#" class="menu-link">EN</a>
       </li>
-      <li class="search-icon" ><img src="../pics/" alt=""></li>
+      <li class="search-icon" ><a href="#"></a></li></div>
     </ul>
   </nav></header>
+
+
+
 <main> 
     <slot/>
 </main>
 <footer></footer>
 	</body>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const menuLinks = document.querySelectorAll(".menu-link");
+    
+      menuLinks.forEach(function(link) {
+        link.addEventListener("click", function(event) {
+          event.preventDefault();
+          this.parentNode.classList.toggle("active");
+        });
+      });
+    });
+    document.addEventListener("DOMContentLoaded", function() {
+    const burgerIcon = document.querySelector(".burger-icon");
+    const menu = document.querySelector(".menu");
 
-
-<script>
-
-</script>
+    burgerIcon.addEventListener("click", function() {
+      menu.classList.toggle("active");
+    });
+  });
+        </script>
 
 </html>
 
 <style>
-	h1, h2, h3, p, li, a {font-family: Arial, Helvetica, sans-serif;
+	@media (min-width: 768px) {
+    h1, h2, h3, p, li, a {font-family: Arial, Helvetica, sans-serif;
 
-	}
+    }
+    .burger-icon {
+      display: none;
+    }
 
 .navigation {
 
@@ -79,7 +105,9 @@
   text-decoration: none;
   color: #fff;
 }
-
+.logo img {
+  width: 50%;
+}
 .menu {
   display: flex;
   align-items: center;
@@ -94,17 +122,25 @@
   list-style: none;
   text-decoration: none;
 }
-.gradient-text {
-  background-color: red;
-  text-decoration: none;
-  background-image: linear-gradient(to right, rgba(68, 191, 190, 1), rgba(85, 129, 205, 1),rgba(182, 90, 167, 1),rgba(245, 77, 71, 1));
-  
-  /* Set the background size and repeat properties. */
+.menu-item.active .sub-menu {
+  display: block;
+}
+
+.menu-item.active {
+  background-image: linear-gradient(to right, rgba(68, 191, 190, 1), rgba(85, 129, 205, 1), rgba(182, 90, 167, 1), rgba(245, 77, 71, 1));
   background-size: 100%;
   background-repeat: repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+}
 
-  /* Use the text as a mask for the background. */
-  /* This will show the gradient as a text color rather than element bg. */
+.gradient-text {
+  text-decoration: none;
+  background-image: linear-gradient(to right, rgba(68, 191, 190, 1), rgba(85, 129, 205, 1),rgba(182, 90, 167, 1),rgba(245, 77, 71, 1));
+  background-size: 100%;
+  background-repeat: repeat;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent; 
   -moz-background-clip: text;
@@ -148,7 +184,7 @@
 }
 
 .sub-menu li:hover {
-  border-bottom: 2px solid white; /* Tilføjer en streg under teksten ved hover */
+  border-bottom: 2px solid white; 
 }
 
 .menu-item:hover .sub-menu {
@@ -179,11 +215,173 @@ border-color: rgba(68, 191, 190, 1);
 	color: white;
 	text-decoration: none;
 }
+.search-icon {
+  margin-left: 20px;
+width: 20px;
+  height: 20px;
+background-image: url('src/pics/search.svg');
+background-size: cover;
+
+ }
+
+.search-icon:hover {
+  background-image: url('src/pics/hover-search.svg');
+
+}
 .divider {
   margin: 0 10px;
   color: #fff;
 }
+  }
+  @media (max-width: 768px) {
+      .burger-icon {
+        display: block;
+        position: absolute;
+        top: 25px;
+        right: 30px;
+        cursor: pointer;
+        font-size: 2rem;
+        color: white;
+        z-index: 999;
+
+      }
+
+      .menu {
+        display: none;
+        position: absolute;
+        top: 60px; /* Adjust as needed */
+        right: 20px;
+        background-color: rgba(0, 0, 0, 0.703);
+        padding: 20px;
+        z-index: 998;
+        list-style: none;
+      }
+
+      .menu.active {
+        display: block;
+      }
+      .logo img {
+  width: 40%;
+}
+   .navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: black;
+  text-decoration: none;
+
+} 
+.menu-item {
+    position: relative;
+    padding: 10px;
+    align-items: center;
+    text-align: center;
+  }
 
 
+
+  .menu-item .sub-menu {
+    display: none;
+    position: relative;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0);
+    padding: 10px;
+    text-decoration: none;
+    list-style: none;
+  }
+
+  .menu-item.active .sub-menu {
+    display: block;
+  }
+
+  .menu-link {
+    color: #fff;
+    text-decoration: none;
+    position: relative;
+  }
+
+  .menu-link .arrowdown {
+    display: inline-block;
+    margin-left: 5px;
+    color: #fff; 
+    font-size: 14px; 
+  }
+
+  .menu-link:hover .arrowdown {
+    color: #fff; 
+  }
+
+  .menu-link:hover .sub-menu {
+    display: block;
+  }
+
+  .sub-menu li {
+    margin: 10px 0;
+  }
+
+  .undermenu {
+    color: #fff;
+    text-decoration: none;
+  }
+  .divider {
+display: none;
+}
+.menu-link:hover {
+  text-decoration: none;
+  background-image: linear-gradient(to right, rgba(68, 191, 190, 1), rgba(85, 129, 205, 1),rgba(182, 90, 167, 1),rgba(245, 77, 71, 1));
+  background-size: 100%;
+  background-repeat: repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+}
+.arrowdown {
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 5px;
+  padding-bottom: 5px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  margin-bottom: 3px;
+  margin-left: 3px;
+}
+.sub-menu li:hover {
+  border-bottom: 2px solid white; 
+}
+.gradient-text {
+  text-decoration: none;
+  background-image: linear-gradient(to right, rgba(68, 191, 190, 1), rgba(85, 129, 205, 1),rgba(182, 90, 167, 1),rgba(245, 77, 71, 1));
+  background-size: 100%;
+  background-repeat: repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+}
+
+.search-icon {
+  margin-left: 20px;
+width: 20px;
+  height: 20px;
+background-image: url('src/pics/search.svg');
+background-size: cover;
+
+ }
+
+.search-icon:hover {
+  background-image: url('src/pics/hover-search.svg');
+
+}
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 20px;
+  align-items: center;
+  text-align: center;
+}
+  }
 </style>
 
