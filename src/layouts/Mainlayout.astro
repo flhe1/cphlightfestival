@@ -55,7 +55,25 @@
 <main> 
     <slot/>
 </main>
-<footer></footer>
+<footer>
+  <div class="footer">
+    <div class="kontakt-footer"> <a href="#" class="kontakt-footer">Kontakt</a>
+    <p>info@copenhagenlightfestival.org</p>
+  <p>Tlf: +45 25 55 66 04</p></div>
+  <div class="link-footer"><a href="#" class="link-footer">Partnere</a>
+  <a href="#" class="link-footer">Sponsere</a>
+<a href="#" class="link-footer">FAQ</a></div>
+<div>
+  <div class="logos"
+  ><img src="src/pics/logo.svg" alt="logo"></div>
+<div class="links-footer"
+<a href="#"><img src="src/pics/facebook.svg" alt="facebook"></a>
+<a href="#"><img src="src/pics/instagram.svg" alt="instagram"></a>
+<a href="#"><img src="src/pics/youtube.svg" alt="youtube"></a></div></div>
+  
+
+  </div>
+</footer>
 	</body>
   <script>
     document.addEventListener("DOMContentLoaded", function() {
@@ -88,8 +106,7 @@
     .burger-icon {
       display: none;
     }
-
-.navigation {
+    .navigation {
 
   display: flex;
   justify-content: space-between;
@@ -131,9 +148,9 @@
   background-size: 100%;
   background-repeat: repeat;
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; 
   -moz-background-clip: text;
   -moz-text-fill-color: transparent;
+  color: white;
 }
 
 .gradient-text {
@@ -176,11 +193,13 @@
   text-align: center;
   justify-content: space-between;
   width: 200%;
+  color: white;
 }
 .sub-menu li {
   display: inline-block;
   margin: 20px 0px;
   flex-grow: 1;
+  color: white
 }
 
 .sub-menu li:hover {
@@ -231,6 +250,43 @@ background-size: cover;
 .divider {
   margin: 0 10px;
   color: #fff;
+}
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr ;
+}
+.footer {
+  background-color: #000000;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(7, 46, 61, 1), rgba(40, 93, 113, 1), rgba(99, 146, 164, 1));
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+
+    justify-content: space-between;
+
+}
+.logos{
+  grid-column: 3;
+  padding-right: 20px;
+}
+.kontakt-footer {
+  display: grid;
+  text-decoration: none;
+  color: white;
+}
+.link-footer {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  text-decoration: none;
+  color: white;
+}
+.links-footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.links-footer img {
+  width: 50%;
 }
   }
   @media (max-width: 768px) {
