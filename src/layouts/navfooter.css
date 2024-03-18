@@ -137,13 +137,13 @@ border-color: rgba(68, 191, 190, 1);
   margin-left: 20px;
 width: 20px;
   height: 20px;
-background-image: url('src/pics/search.svg');
+background-image: url("search.svg");
 background-size: cover;
 
  }
 
 .search-icon:hover {
-  background-image: url('src/pics/hover-search.svg');
+  background-image: url("hover-search.svg");
 
 }
 .divider {
