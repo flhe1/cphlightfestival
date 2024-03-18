@@ -1,8 +1,8 @@
 ---
-
+import Festivalen from "./festivalen.astro";
 ---
-
-<html lang="en">
+<!DOCTYPE html>
+<html lang="da">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -13,16 +13,16 @@
 	<body>
 <header>   
   <nav class="navigation">
-    <a href="src/pages/index.astro" class="logo"> <img src="src/pics/logo.svg" alt=""></a>
+    <a href="/index.astro" class="logo"> <img src="src/pics/logo.svg" alt=""></a>
     <div class="burger-icon">&#9776;</div>
     <ul class="menu">
       <li class="menu-item">
-        <a href="#" class="menu-link">FESTIVALEN <i class="arrowdown"></i></span></a>
+        <a href="" class="menu-link">FESTIVALEN <i class="arrowdown"></i></span></a>
         <ul class="sub-menu">
           <li><a href="#" class="undermenu">FESTIVAL MAP</a></li>
           <li><a href="#"class="undermenu">TIDLIGERE FESTIVALER</a></li>
           <li>
-            <a href="../pages/festivalen.astro"class="undermenu" >PROGRAM</span></a>
+            <a href="/festivalen.astro" class="undermenu" >PROGRAM</span></a>
           </li>
         </ul>
       </li>
@@ -72,6 +72,7 @@
   </div>
 </footer>
 	</body>
+  
   <script>
     document.addEventListener("DOMContentLoaded", function() {
       const menuLinks = document.querySelectorAll(".menu-link");
