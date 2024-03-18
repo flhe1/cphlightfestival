@@ -1,21 +1,21 @@
 ---
 import Festivalen from "./festivalen.astro";
+import Navfooter from "../layouts/navfooter.css"
 ---
-<Festivalen></Festivalen>
-<!DOCTYPE html>
+
 <html lang="da">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-    <link rel="stylesheet" href="../layouts/navfooter.css">
+    <link rel="stylesheet" href="src/layouts/navfooter.css">
 		<title>Astro</title>
 	</head>
 	<body>
 <header>   
   <nav class="navigation">
-    <a href="index.astro" class="logo"> <img src="src/pics/logo.svg" alt=""></a>
+    <a href="src/pages/index.astro" class="logo"> <img src="src/pics/logo.svg" alt=""></a>
     <div class="burger-icon">&#9776;</div>
     <ul class="menu">
       <li class="menu-item">
@@ -55,7 +55,6 @@ import Festivalen from "./festivalen.astro";
 
 
 <main> 
-    <slot/>
 </main>
 <footer>
   <div class="footer">
