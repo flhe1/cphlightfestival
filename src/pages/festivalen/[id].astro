@@ -1,7 +1,7 @@
 ---
 import Mainlayout from "../Mainlayout.astro"
-import Nyhedsbrev from "/components/Nyhedsbrev.astro"
-import 
+import Nyhedsbrev from "../../components/Nyhedsbrev.astro"
+import Arrow from "../../components/Arrow.astro"
 
 export async function getStaticPaths () {
     const data = await fetch ('https://qykudgwkpukswmlhoyxc.supabase.co/rest/v1/clf?select=*', {
@@ -24,7 +24,7 @@ export async function getStaticPaths () {
 ---
 
 <Mainlayout>
-
+    <div class="pil"><Arrow/></div>
  <div class="singleview"> 
 <div class="billede">
     <img src={myData.photos} alt=""></div>
@@ -35,6 +35,7 @@ export async function getStaticPaths () {
             <h2>{myData.Navn}</h2>
         </div>
         <div class="placering">
+            <h3>Kunstner: <span class="normal-text">{myData.Kunstner}</span></h3>
             <h3>Lokation: <span class="normal-text">{myData.lokation}</span></h3>
         </div>
         <div class="paragraf">
@@ -42,13 +43,22 @@ export async function getStaticPaths () {
         </div>
     </div>
 </div>
-
+<Nyhedsbrev/>
 </Mainlayout>
 <style>
 @media (min-width: 768px) {
+    .pil {
+        display: grid;
+        justify-content: end;
+        margin-right: 50px;
+        margin-bottom: 10px;
+
+    
+}
 img {
     width: auto;
 }
+
 .singleview {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -80,6 +90,14 @@ img {
 
 }
 @media (max-width: 768px) {
+    .pil {
+        display: grid;
+        justify-content: end;
+        margin-right: 50px;
+        margin-bottom: 10px;
+
+    
+}
    
 img {
     width: 100%;
@@ -108,5 +126,8 @@ img {
 .billede {
     justify-self: center;
 } 
+.arrow {
+
+}
 }
 </style>
