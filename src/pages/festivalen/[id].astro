@@ -1,14 +1,38 @@
 ---
+import Mainlayout from "../Mainlayout.astro"
 
- export async function getStaticPaths () {
-    const data = await fetch ('...').then(response => response.json ());
+export async function getStaticPaths () {
+    const data = await fetch ('https://qykudgwkpukswmlhoyxc.supabase.co/rest/v1/clf?select=*', {
+	method: "GET",
+	headers: {
+		apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InF5a3VkZ3drcHVrc3dtbGhveXhjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA1MDA4MzUsImV4cCI6MjAyNjA3NjgzNX0.3NKiAvXLoozXEgUzIxcWpW1A4IR947vC84DWEsldFZk"
+	},
+}).then(response => response.json ());
 
-    return data.map ((post)=> {
+    return data.map ((skulptur)=> {
         return {
-            params: { id: post.id},
-            props: {post},
+            params: { id: skulptur.id},
+            props: {myData:skulptur},
         };
         
         });
     }
+    const {myData} = Astro.props;
+    console.log(myData)
 ---
+
+<Mainlayout>
+    <div><img src={myData.photos} alt=""></div>
+    <div>
+        <div>
+            <h2>{myData.id}</h2>
+            <h2>{myData.Navn}</h2>
+        </div>
+        <div>
+            <h3>{myData.lokation}</h3>
+        </div>
+        <div>
+            <p>{myData.beskrivelse}</p>
+        </div>
+    </div>
+</Mainlayout>

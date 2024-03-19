@@ -8,7 +8,7 @@ const data = await fetch("https://qykudgwkpukswmlhoyxc.supabase.co/rest/v1/clf?s
 	},
 }
 ).then (res=>res.json())
-import Singleview from "./singleview.astro";
+import Festivalcomponent from "./Festivalcomponent.astro"
 import Index from "./index.astro";
 
 ---
@@ -17,7 +17,7 @@ import Index from "./index.astro";
 
 <Mainlayout>
     
-    {data.map ((show) => {return <Singleview  data={show}/>;
+    {data.map ((show) => {return <Festivalcomponent  data={show}/>;
 })}
 
 </Mainlayout>

@@ -5,15 +5,18 @@ import Festivalen from "./festivalen.astro";
 const {data} = Astro.props;
 ---
 
+
+<a href={`festivalen/${data.id}`}> 
     <article>   
         <h2>{data.id}</h2>
-    <h3>{data.Navn}</h3>
-        <h3>{data.kunstner}</h3>
-        <h4>{data.lokation}</h4>
-        <p>{data.beskrivelse}</p>
-        <img src={data.photos} alt="billede">
-    </article>
-
+        <h3>{data.Navn}</h3>
+            <h3>{data.kunstner}</h3>
+            <h4>{data.lokation}</h4>
+            <p>{data.beskrivelse}</p>
+            <img src={data.photos} alt="billede">
+        </article>
+    </a>
+   
 
     <style>
 
