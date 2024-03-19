@@ -4,7 +4,7 @@ const variant = Astro.props.variant;
 const size = Astro.props.size;
 ---
 
-<button class={variant + " " + size}>{text}</button>
+<button class={variant + " " + size}><slot></button>
 
 <style>
 
