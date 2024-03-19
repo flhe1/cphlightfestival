@@ -1,6 +1,17 @@
 html {
   background-color: #000000;
 }
+h1, h2, h3, h4, h5, p {
+  color: white;
+  font-family:"helvetica" ;
+}
+@font-face{
+  font-family:"helvetica";
+  src:url("https://candyfonts.com/wp-data/2018/10/26/11538/HELR45W.ttf") format("woff"),
+  url("https://candyfonts.com/wp-data/2018/10/26/11538/HELR45W.ttf") format("opentype"),
+  url("https://candyfonts.com/wp-data/2018/10/26/11538/HELR45W.ttf") format("truetype");
+}
+
 
 @media (min-width: 768px) {
   h1,
@@ -143,12 +154,12 @@ html {
     margin-left: 20px;
     width: 20px;
     height: 20px;
-    background-image: url("../pics/search.svg");
+    background-image: url('/pics/search.svg');
     background-size: cover;
   }
 
   .search-icon:hover {
-    background-image: url("/pics/hover-search.svg");
+    background-image: url('/pics/hover-search.svg');
   }
   .divider {
     margin: 0 10px;
@@ -163,7 +174,7 @@ html {
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(7, 46, 61, 1), rgba(40, 93, 113, 1), rgba(99, 146, 164, 1));
     display: grid;
     grid-template-columns: 1fr 1fr auto;
-
+    margin-top: 100px;
     justify-content: space-between;
   }
   .logos {
@@ -186,6 +197,7 @@ html {
     grid-template-columns: 1fr 1fr 1fr;
     padding-top: 20px;
     padding-bottom: 20px;
+
   }
   .links-footer img {
     width: 50%;
@@ -320,12 +332,12 @@ html {
     margin-left: 20px;
     width: 20px;
     height: 20px;
-    background-image: url("src/pics/search.svg");
+    background-image: url('/pics/search.svg');
     background-size: cover;
   }
 
   .search-icon:hover {
-    background-image: url("src/pics/hover-search.svg");
+    background-image: url('/pics/hover-search.svg');
   }
   .grid {
     display: grid;
@@ -341,6 +353,7 @@ html {
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(7, 46, 61, 1), rgba(40, 93, 113, 1), rgba(99, 146, 164, 1));
     align-items: center;
     grid-auto-rows: min-content;
+    margin-top: 100px;
   }
   .kontakt-footer,
   .link-footer {
@@ -371,9 +384,12 @@ html {
     padding-top: 20px;
     padding-bottom: 20px;
     position: relative;
+    left: 110px;
+    bottom: 70px;
+    width: 50%;
   }
   .links-footer img {
-    width: 30%;
+    width: 70%;
   }
   .logos {
     display: grid;
