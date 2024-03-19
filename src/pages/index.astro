@@ -1,5 +1,6 @@
 ---
 import Mainlayout from "./Mainlayout.astro";
+import Nyhedsbrev from "../components/Nyhedsbrev.astro"
 
 const data = await fetch("https://qykudgwkpukswmlhoyxc.supabase.co/rest/v1/clf?select=*", {
 	method: "GET",
@@ -13,6 +14,6 @@ console.log (data);
 ---
 
 <Mainlayout>
-
+<Nyhedsbrev/>
 </Mainlayout>
 
