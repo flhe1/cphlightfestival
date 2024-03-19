@@ -15,7 +15,7 @@ import Navfooter from "../layouts/navfooter.css"
 	<body>
 <header>   
   <nav class="navigation">
-    <a href="src/pages/index.astro" class="logo"> <img src="src/pics/logo.svg" alt=""></a>
+    <a href="/" class="logo"> <img src="/pics/logo.svg" alt=""></a>
     <div class="burger-icon">&#9776;</div>
     <ul class="menu">
       <li class="menu-item">
@@ -24,7 +24,7 @@ import Navfooter from "../layouts/navfooter.css"
           <li><a href="#" class="undermenu">FESTIVAL MAP</a></li>
           <li><a href="#"class="undermenu">TIDLIGERE FESTIVALER</a></li>
           <li>
-            <a href="src/pages/festivalen.astro" class="undermenu" >PROGRAM</span></a>
+            <a href="/festivalen" class="undermenu" >PROGRAM</span></a>
           </li>
         </ul>
       </li>
@@ -55,6 +55,7 @@ import Navfooter from "../layouts/navfooter.css"
 
 
 <main> 
+  <slot/>
 </main>
 <footer>
   <div class="footer">
@@ -64,10 +65,10 @@ import Navfooter from "../layouts/navfooter.css"
   <a href="#" class="link-footer">Sponsere</a><a href="#" class="link-footer">FAQ</a></div>
 <div class="footer-mobil">
   <div class="logos"
-  ><img src="src/pics/logo.svg" alt="logo"></div>
+  ><img src="/pics/logo.svg" alt="logo"></div>
 <div class="links-footer" >
-<a href="#"><img src="src/pics/facebook.svg" alt="facebook"></a>
-<a href="#"><img src="src/pics/instagram.svg" alt="instagram"></a> <a href="#"><img src="src/pics/youtube.svg" alt="youtube"></a></div></div>
+<a href="#"><img src="/pics/facebook.svg" alt="facebook"></a>
+<a href="#"><img src="/pics/instagram.svg" alt="instagram"></a> <a href="#"><img src="/pics/youtube.svg" alt="youtube"></a></div></div>
   
 
   </div>

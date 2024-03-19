@@ -1,5 +1,17 @@
 ---
 import Mainlayout from "../pages/Mainlayout.astro";
+import Index from "./index.astro";
+import Festivalen from "./festivalen.astro";
+const {data} = Astro.props;
 ---
 
-<Mainlayout></Mainlayout>
+<Mainlayout>
+    <article>    {data.map ((show) => {return <Index  data={show}/>;
+    })}
+        <h2>{data.id}</h2>
+        <h3>{data.kunstner}</h3>
+        <h4>kunstner</h4>
+        <p>beskrivelse</p>
+        <img src="#" alt="billede">
+    </article>
+</Mainlayout>

@@ -1,7 +1,20 @@
 ---
 import Mainlayout from "./Mainlayout.astro"
-import Navfooter from "../layouts/navfooter.css"
+const {data} = Astro.props;
+import Singleview from "./singleview.astro";
+import Index from "./index.astro";
+
 ---
 
 
-<Mainlayout></Mainlayout>
+<Mainlayout>
+    {data.map ((show) => {return <Index  data={show}/>;
+})}
+    <article>
+        <h2>{data.id}</h2>
+        <h3>{data.Navn}</h3>
+        <h4>kunstner</h4>
+        <p>beskrivelse</p>
+        <img src="#" alt="billede">
+    </article>
+</Mainlayout>
