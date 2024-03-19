@@ -1,6 +1,13 @@
 ---
 import Mainlayout from "./Mainlayout.astro"
-const {data} = Astro.props;
+
+const data = await fetch("https://qykudgwkpukswmlhoyxc.supabase.co/rest/v1/clf?select=*", {
+	method: "GET",
+	headers: {
+		apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InF5a3VkZ3drcHVrc3dtbGhveXhjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA1MDA4MzUsImV4cCI6MjAyNjA3NjgzNX0.3NKiAvXLoozXEgUzIxcWpW1A4IR947vC84DWEsldFZk"
+	},
+}
+).then (res=>res.json())
 import Singleview from "./singleview.astro";
 import Index from "./index.astro";
 
@@ -9,13 +16,8 @@ import Index from "./index.astro";
 
 
 <Mainlayout>
-    {data.map ((show) => {return <Index  data={show}/>;
+    
+    {data.map ((show) => {return <Singleview  data={show}/>;
 })}
-    <article>
-        <h2>{data.id}</h2>
-        <h3>{data.Navn}</h3>
-        <h4>kunstner</h4>
-        <p>beskrivelse</p>
-        <img src="#" alt="billede">
-    </article>
+
 </Mainlayout>
