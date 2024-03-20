@@ -1,0 +1,57 @@
+---
+
+---
+
+			<div class="overskrift">
+
+
+
+<div class="hero-image">
+    <h1 class="hero-heading"> 02.02.2024 - 25.01.2024</h1>
+<h1 class="hero-heading1">Copenhagen light festival</h1>
+<img src="/pics/image1.svg" alt="image1">
+<img src="/pics/image2.svg" alt="image2">
+<img src="/pics/image3.svg" alt="image3">
+<img src="/pics/image4.svg" alt="image4">
+		</div>
+
+        <style>
+            .hero-heading {
+	 position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    padding: 0;
+    color: aliceblue; /* Adjust the color as needed */
+    font-size: 1rem; /* Adjust the font size as needed */
+    z-index: 1; /* Ensure the heading stays above the images */
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+}
+ }  
+
+
+.hero-image {
+       width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+.hero-image img {
+      width: 70%;
+    height: auto;
+    position: absolute;
+    top: 10%;
+    left: 15%;
+    opacity: 0;
+    animation: rotateImages 0.1s infinite;
+}
+
+@keyframes rotateImages {
+    0% { opacity: 1; }
+    33.33% { opacity: 1; }
+    66.66% { opacity: 1; }
+    100% { opacity: 1; }
+     }
+
+        </style>

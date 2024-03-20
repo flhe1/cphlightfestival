@@ -1,6 +1,10 @@
 ---
 import Mainlayout from "./Mainlayout.astro";
-import Nyhedsbrev from "../components/Nyhedsbrev.astro"
+import Nyhedsbrev from "../components/Nyhedsbrev.astro";
+import Animation from "../components/Animation.astro";
+import Cards from "../components/Cards.astro"
+import Festivalmap from "../components/Festivalmap.astro"
+import Arrowdown from
 
 const data = await fetch("https://qykudgwkpukswmlhoyxc.supabase.co/rest/v1/clf?select=*", {
 	method: "GET",
@@ -14,6 +18,12 @@ console.log (data);
 ---
 
 <Mainlayout>
-<Nyhedsbrev/>
+	<Animation/>
+	<h2>Indlev dig i københavns magiske lysfestival</h2>
+	<p>Skab din ultimative oplevelse! Oplev betagende lysværker, spændende events og unikke festivaloplevelser</p>
+
+<Cards/>
+<Festivalmap/>
+<Nyhedsbrev/> 
 </Mainlayout>
 
