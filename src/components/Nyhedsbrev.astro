@@ -1,0 +1,142 @@
+---
+
+---
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+
+<article>
+<div class="nyhedsbrev_container">
+<h2>TILMELD DIG VORES NYHEDSBREV</h2>
+<div class="box"></div>
+<div class="box"></div>
+<p>PS: Ved tilmelding skriver du dig samtidigt op til at modtage vores nyhedsbrev. Du kan altid afmelde dig igen. Se vores privacy policy her</p>
+<button>SIGN UP</button>
+</div>
+
+
+</article>
+
+
+<style>
+    .nyhedsbrev_container {
+        display: flex;
+       
+        height: 552px;
+        flex-direction: column; /* Stack items vertically */
+    align-items: center;
+        background: linear-gradient(to bottom, rgba(0, 12, 98, 1) 0%, rgba(86, 54, 163, 1) 100%);
+    }
+
+    h2 {
+    /* TILMED DIG VORES NYHEDSBREV */
+    background: linear-gradient(to right, rgba(68, 191, 190, 1), rgba(85, 129, 205, 1), rgba(182, 90, 167, 1), rgba(245, 77, 71, 1));
+    -webkit-background-clip: text; /* For Webkit browsers */
+    background-clip: text;
+    color: transparent; /* Hide the text itself */
+    font-size: 48px;
+    font-family: Helvetica;
+    font-weight: 400;
+    word-wrap: break-word;
+margin-top: 6%;
+}
+    
+    
+
+    p{
+        color: var(--Color, #FFF);
+font-family: Helvetica;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+margin-top: 24px; /* Adjust the gap between elements */
+width: 568px;
+height: 43px;
+flex-shrink: 0;
+    }
+
+    .box{
+        border: 1px solid #000;
+
+background: #C9C6E7;
+width: 570px;
+height: 49px;
+flex-shrink: 0;
+margin-top: 24px; /* Adjust the gap between elements */
+    }
+
+    button{
+width: 245px;
+height: 42.001px;
+flex-shrink: 0;
+background: #000;
+color: var(--Color, #FFF);
+text-align: center;
+font-family: "Inter", sans-serif;
+font-size: 20px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+
+    }
+
+@media only screen and (max-width: 800px){
+
+    h2 {
+    text-align: center;
+font-family: Helvetica;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+    
+    
+
+    p{
+width: 313px;
+color: var(--Color, #FFF);
+font-family: Helvetica;
+font-size: 10px;
+font-style: normal;
+font-weight: 400;
+line-height: 150%; /* 15px */
+    }
+
+    .box{
+        width: 178px;
+height: 21px;
+    }
+
+    button{
+display: flex;
+padding: 5px 20px;
+justify-content: center;
+align-items: flex-start;
+gap: 10px;
+color: var(--Color, #FFF);
+text-align: center;
+font-family: Inter;
+font-size: 10px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+width: 110px;
+    height: 29px;
+
+
+
+    }
+    .nyhedsbrev_container {
+       
+height: 300px;
+flex-shrink: 0;
+    }
+}
+
+
+
+
+</style>
+

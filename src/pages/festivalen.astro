@@ -1,7 +1,25 @@
 ---
 import Mainlayout from "./Mainlayout.astro"
-import Navfooter from "../layouts/navfooter.css"
+
+const data = await fetch("https://qykudgwkpukswmlhoyxc.supabase.co/rest/v1/clf?select=*", {
+	method: "GET",
+	headers: {
+		apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InF5a3VkZ3drcHVrc3dtbGhveXhjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA1MDA4MzUsImV4cCI6MjAyNjA3NjgzNX0.3NKiAvXLoozXEgUzIxcWpW1A4IR947vC84DWEsldFZk"
+	},
+}
+).then (res=>res.json())
+import Festivalcomponent from "./Festivalcomponent.astro"
+import Index from "./index.astro";
+
 ---
 
 
-<Mainlayout></Mainlayout>
+
+<Mainlayout>
+    
+    {data.map ((show) => {return <Festivalcomponent  data={show}/>;
+})}
+
+
+</Mainlayout>
+

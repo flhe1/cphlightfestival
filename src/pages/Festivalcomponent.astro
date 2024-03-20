@@ -1,0 +1,30 @@
+---
+import Mainlayout from "./Mainlayout.astro";
+import Index from "./index.astro";
+import Festivalen from "./festivalen.astro";
+const {data} = Astro.props;
+---
+
+
+<a href={`festivalen/${data.id}`}> 
+    <article>   
+        <article class="festival">   
+            <h2>{data.id}</h2>
+        <h3>{data.Navn}</h3>
+            <h3>{data.kunstner}</h3>
+            <img src={data.photos} alt="billede">
+        </article>
+    </a>
+   
+    <style>
+
+     h2, h3, h4, p {
+        font-family: Arial, Helvetica, sans-serif; 
+    color: white; }
+
+    .festival{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+         </style>
