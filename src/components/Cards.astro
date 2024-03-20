@@ -1,0 +1,82 @@
+---
+
+---
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+
+<div class="card-boxes">
+
+<div class="individual-cards">
+	<div>
+<img src="pics/program.webp" alt="program">
+</div>
+<div class="pil">
+<h3>Program</h3>
+ <div class="triangle-side"></div>
+ </div>
+</div>
+
+<div class="individual-cards">
+	<div>
+<img src="/pics/oplevelser.webp" alt="oplevelser">
+</div>
+<div class="pil">
+<h3>Oplevelser</h3>
+ <div class="triangle-side"></div>
+ </div>
+</div>
+
+
+<div class="individual-cards">
+	<div>
+<img src="/pics/events.webp" alt="events">
+</div>
+<div class="pil">
+<h3>Events
+</h3>
+ <div class="triangle-side"></div>
+ </div>
+</div>
+</div>
+
+
+<style>
+
+    @media (min-width: 800px) {
+.card-boxes {
+	display: flex;
+	justify-content: center;
+	padding-left: 20px;
+	padding-right: 20%;
+    padding-top: 100px;
+}
+}
+
+.individual-cards {
+	padding-left: 20px;
+	padding-right: 20px;
+    color: aliceblue;
+    padding-bottom: 50px;
+}
+
+
+.triangle-side {
+	width: 0;
+        height: 0;
+        border-top: 20px solid transparent;
+        border-bottom: 20px solid transparent;
+        border-left: 25px solid #97D5F3; /* Blue color with 50% opacity */
+		border-right: none;
+		filter: blur(3px); /* Add blur effect */
+       
+}
+
+.pil {
+	display: flex;
+	justify-content: center;
+	gap: 10px;
+    
+}
+</style>
