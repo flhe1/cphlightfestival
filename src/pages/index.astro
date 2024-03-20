@@ -3,22 +3,10 @@ import Mainlayout from "./Mainlayout.astro";
 import Nyhedsbrev from "../components/Nyhedsbrev.astro";
 import Animation from "../components/Animation.astro";
 import Cards from "../components/Cards.astro"
-import Festivalmap from "../components/Festivalmap.astro"
-import Arrowdown from
-
-const data = await fetch("https://qykudgwkpukswmlhoyxc.supabase.co/rest/v1/clf?select=*", {
-	method: "GET",
-	headers: {
-		apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InF5a3VkZ3drcHVrc3dtbGhveXhjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA1MDA4MzUsImV4cCI6MjAyNjA3NjgzNX0.3NKiAvXLoozXEgUzIxcWpW1A4IR947vC84DWEsldFZk"
-	},
-}
-).then (res=>res.json())
-
-console.log (data);
+import Festivalmap from "../components/Festivalmap.astro" 
 ---
 
 <Mainlayout>
-<<<<<<< HEAD
 	<Animation/>
 	<h2>Indlev dig i københavns magiske lysfestival</h2>
 	<p>Skab din ultimative oplevelse! Oplev betagende lysværker, spændende events og unikke festivaloplevelser</p>
@@ -26,8 +14,6 @@ console.log (data);
 <Cards/>
 <Festivalmap/>
 <Nyhedsbrev/> 
-=======
 
->>>>>>> 4145e33639f41970381f7ed981ad3253234058aa
 </Mainlayout>
 
