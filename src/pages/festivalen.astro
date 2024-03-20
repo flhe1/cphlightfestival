@@ -15,9 +15,33 @@ import Index from "./index.astro";
 ---
 
 <Mainlayout>
-    
-    {data.map ((show) => {return <Festivalcomponent  data={show}/>;
+<article class="layout"> {data.map ((show) => {return <Festivalcomponent  data={show}/>;
 })}
-
+</article>   
 </Mainlayout>
 
+<style>
+ @media (min-width: 768px) {
+	
+	.layout {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		width: 1436px;
+padding: 0px 200px;
+justify-content: center;
+align-items: center;
+gap: 100px;
+	}
+}
+
+@media (max-width: 768px) {
+	.layout{
+		display: grid;
+grid-template-columns: 1fr;
+align-items: center;
+margin-left: 50px;
+margin-right: 50px;
+gap: 100px;
+	}
+}
+</style>

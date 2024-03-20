@@ -5,26 +5,56 @@ import Festivalen from "./festivalen.astro";
 const {data} = Astro.props;
 ---
 
-
-<a href={`festivalen/${data.id}`}> 
-    <article>   
-        <article class="festival">   
-            <h2>{data.id}</h2>
+<a href={`festivalen/${data.id}`}>  
+    <article>
+<div>
+    <div class="overskrift">
+        <h3>{data.id}.</h3>
         <h3>{data.Navn}</h3>
-            <h3>{data.kunstner}</h3>
-            <img src={data.photos} alt="billede">
+    </div>
+            <div class="kunstner">
+                <h4>Kunstner: <span class="normal-text">{data.Kunstner}</span></h4>
+            </div>
+            <div >
+                <h4>Lokation: <span class="normal-text">{data.lokation}</span></h4>
+            </div>
+            <div>
+                <img src={data.photos} alt="billede">
+            </div>
         </article>
     </a>
    
-    <style>
 
-     h2, h3, h4, p {
+<style>
+h2, h3, h4, p, a {
         font-family: Arial, Helvetica, sans-serif; 
-    color: white; }
+    color: white;
+    text-decoration: none;
+}
+    @media (min-width: 768px) {
 
-    .festival{
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-    }
+        .overskrift {
+    display: flex;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
 
+}
+.normal-text {
+    font-weight: normal; 
+    
+}
+}
+
+@media (max-width: 768px) {
+.overskrift {
+    display: flex;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+
+}
+.normal-text {
+    font-weight: normal; 
+    
+}
+}
          </style>
