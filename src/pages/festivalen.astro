@@ -1,5 +1,6 @@
 ---
 import Mainlayout from "./Mainlayout.astro"
+import Nyhedsbrev from "../components/Nyhedsbrev.astro";
 
 const data = await fetch("https://qykudgwkpukswmlhoyxc.supabase.co/rest/v1/clf?select=*", {
 	method: "GET",
@@ -13,13 +14,10 @@ import Index from "./index.astro";
 
 ---
 
-
-
 <Mainlayout>
     
     {data.map ((show) => {return <Festivalcomponent  data={show}/>;
 })}
-
 
 </Mainlayout>
 

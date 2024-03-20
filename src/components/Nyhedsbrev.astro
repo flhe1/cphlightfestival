@@ -1,5 +1,5 @@
 ---
-
+import Button from "./Button.astro"
 ---
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,7 +11,7 @@
 <div class="box"></div>
 <div class="box"></div>
 <p>PS: Ved tilmelding skriver du dig samtidigt op til at modtage vores nyhedsbrev. Du kan altid afmelde dig igen. Se vores privacy policy her</p>
-<button>SIGN UP</button>
+<Button size ="small">SIGN UP</Button>
 </div>
 
 
@@ -25,6 +25,7 @@
         height: 552px;
         flex-direction: column; /* Stack items vertically */
     align-items: center;
+    margin-top: 100px;
         background: linear-gradient(to bottom, rgba(0, 12, 98, 1) 0%, rgba(86, 54, 163, 1) 100%);
     }
 

@@ -1,6 +1,7 @@
 ---
 import Festivalen from "./festivalen.astro";
 import Navfooter from "../layouts/navfooter.css"
+import Nyhedsbrev from "../components/Nyhedsbrev.astro";
 ---
 
 
@@ -11,6 +12,9 @@ import Navfooter from "../layouts/navfooter.css"
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
     <link rel="stylesheet" href="/src/layouts/navfooter.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
 		<title>Astro</title>
 	</head>
 	<body>
@@ -56,6 +60,7 @@ import Navfooter from "../layouts/navfooter.css"
 
 <main> 
   <slot/>
+  <Nyhedsbrev/>
 </main>
 <footer>
   <div class="footer">

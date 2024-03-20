@@ -1,5 +1,7 @@
 ---
 import Mainlayout from "../Mainlayout.astro"
+import Nyhedsbrev from "../../components/Nyhedsbrev.astro"
+import Arrow from "../../components/Arrow.astro"
 
 export async function getStaticPaths () {
     const data = await fetch ('https://qykudgwkpukswmlhoyxc.supabase.co/rest/v1/clf?select=*', {
@@ -22,17 +24,108 @@ export async function getStaticPaths () {
 ---
 
 <Mainlayout>
-    <div><img src={myData.photos} alt=""></div>
-    <div>
-        <div>
-            <h2>{myData.id}</h2>
+    <div class="pil"><Arrow/></div>
+ <div class="singleview"> 
+<div class="billede">
+    <img src={myData.photos} alt=""></div>
+
+    <div class="grid2">
+        <div class="beskrivelse">
+            <h2>{myData.id}.</h2>
             <h2>{myData.Navn}</h2>
         </div>
-        <div>
-            <h3>{myData.lokation}</h3>
+        <div class="placering">
+            <h3>Kunstner: <span class="normal-text">{myData.Kunstner}</span></h3>
+            <h3>Lokation: <span class="normal-text">{myData.lokation}</span></h3>
         </div>
-        <div>
+        <div class="paragraf">
             <p>{myData.beskrivelse}</p>
         </div>
     </div>
+</div>
 </Mainlayout>
+<style>
+@media (min-width: 768px) {
+    .pil {
+        display: grid;
+        margin-left: 50px;
+        margin-top: 10px;
+
+    
+}
+img {
+    width: auto;
+}
+
+.singleview {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 20px;
+    grid-gap: 50px;
+
+}
+.grid2 {
+    margin-right: 20px
+}
+.beskrivelse {
+    display: flex;
+    grid-gap: 20px;
+}
+
+.normal-text {
+    font-weight: normal; 
+    
+}
+.paragraf {
+    line-height: 1.8 ;
+    padding-top: 20px;
+    font-style: italic;
+}
+.billede {
+    justify-self: center;
+    margin-left: 20px;
+}
+
+}
+@media (max-width: 768px) {
+    .pil {
+        display: grid;
+        justify-content: end;
+        margin-right: 50px;
+        margin-bottom: 10px;
+
+    
+}
+   
+img {
+    width: 100%;
+}
+.singleview {
+    display: grid;
+    grid-template-rows: 2fr;
+  margin-left: 50px;
+  margin-right: 50px;
+    grid-gap: 10px;
+
+}
+.beskrivelse {
+    display: flex;
+    grid-gap: 20px;
+}
+
+.normal-text {
+    font-weight: normal; 
+}
+.paragraf {
+    line-height: 1.8 ;
+    padding-top: 10px;
+    font-style: italic;
+}
+.billede {
+    justify-self: center;
+} 
+.arrow {
+
+}
+}
+</style>
