@@ -5,25 +5,28 @@ import Festivalen from "./festivalen.astro";
 const {data} = Astro.props;
 ---
 
-<a href={`festivalen/${data.id}`}>  
+<a href={`festivalen/${data.id}`} class="article">
     <article>
-<div>
-    <div class="overskrift">
-        <h3>{data.id}.</h3>
-        <h3>{data.Navn}</h3>
-    </div>
+        <div>
+            <div class="overskrift">
+                <h3>{data.id}.</h3>
+                <h3>{data.Navn}</h3>
+            </div>
             <div class="kunstner">
                 <h4>Kunstner: <span class="normal-text">{data.Kunstner}</span></h4>
             </div>
-            <div >
-                <h4>Lokation: <span class="normal-text">{data.lokation}</span></h4>
-            </div>
             <div>
-                <img src={data.photos} alt="billede">
+                <!-- Tilføj klassen "blurry-img" til billedet -->
+                <img src={data.photos} alt="billede" class="blurry-img">
+                <!-- Overlay til lokationsdata -->
+                <div class="location-overlay">
+                    <span class="normal-text"> <img src="/pics/lokation.svg" alt=""> {data.lokation}</span>
+                </div>
             </div>
-        </article>
-    </a>
-   
+        </div>
+    </article>
+</a>
+
 
 <style>
 h2, h3, h4, p, a {
@@ -32,20 +35,60 @@ h2, h3, h4, p, a {
     text-decoration: none;
 }
     @media (min-width: 768px) {
-
-        .overskrift {
+.overall {
+    margin-bottom: 200px;
+}
+     .overskrift {
     display: flex;
     grid-template-columns: 1fr 1fr;
     grid-gap: 10px;
 
 }
-.normal-text {
-    font-weight: normal; 
-    
-}
+
+.blurry-img:hover {
+        filter: blur(5px); /* Juster værdien for at ændre graden af sløring */
+        transition: filter 0.1s ease; /* Tilføj overgang for en glat effekt */
+    }
+
+    /* Vis lokationsdataen, når musemarkøren hover over billedet */
+    .article:hover .location-overlay {
+        opacity: 1;
+        transition: opacity 0.5s ease; /* Tilføj overgang for en glat effekt */
+    }
+
+    /* Style for lokationsdataoverlay */
+    .location-overlay {
+        position: absolute;
+        font-size: 1.5rem;
+        background-color: rgba(255, 255, 255, 0); /* Juster gennemsigtigheden efter behov */
+        border-radius: 5px;
+        opacity: 0;
+        color: white;
+        transition: opacity 0.5s ease;
+        text-align: center; /* Centrer teksten */
+        justify-content: center; /* Centrer vandret */
+        align-items: center;
+        transform: translate(10px, -1000%); /* Centrer lodret */
+    }
+.festival-image {
+    transition: filter 0.5s ease;
 }
 
+.image-container:hover .festival-image {
+    filter: blur(5px);
+}
+
+.image-container:hover h4 {
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0s, opacity 0.5s linear;
+
+}
+    }
 @media (max-width: 768px) {
+    .blurry-img {
+        width: 80%;
+    }
 .overskrift {
     display: flex;
     grid-template-columns: 1fr 1fr;
@@ -54,7 +97,22 @@ h2, h3, h4, p, a {
 }
 .normal-text {
     font-weight: normal; 
-    
+}
+
+.normal-text img {
+    width:5%;
+    justify-content: center;
+    padding-top: 10px;
+}
+.article {
+    display: grid;
+    grid-template-columns: 1fr;
+margin-left: 50px;
+margin-bottom: 100px;
+    justify-items: center;
+}
+.location-overlay {
+    transform: translate(0px, -300px);
 }
 }
          </style>
