@@ -14,7 +14,7 @@ import Cards from "../components/Cards.astro"
 </div>
 
 <div class="individual-cards">
-	<div>
+	<div class="group">
 <img src="pics/Group.svg" alt="program">
 </div>
 <p>Udforsk festivalen til fods, på cykel eller endda fra vandet</p>
@@ -30,7 +30,6 @@ import Cards from "../components/Cards.astro"
 
 
 <Cards/>
-<Nyhedsbrev/> 
 </Mainlayout>
 
 <style>
@@ -44,6 +43,8 @@ import Cards from "../components/Cards.astro"
     padding-right: 20px;
     
 }
+
+
 
 h3 {
 	font-family: Arial, Helvetica, sans-serif;
@@ -64,6 +65,12 @@ h3 {
     
 }
 
+@media (max-width: 800px) {
+	.group {
+		width: 100px;
+		height: auto;
+	}
+}
 	h2, p {
 		font-family: Arial, Helvetica, sans-serif;
 		text-align: center;
