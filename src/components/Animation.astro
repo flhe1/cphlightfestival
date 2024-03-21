@@ -1,57 +1,86 @@
 ---
 
 ---
+<div class="animation-container">
+     <h1 class="heading1">25.01.2024 - 02.02.2024</h1>
+  <h1 class="heading2">Copenhagen Light Festival</h1>
+      <div class="image" id="image1"></div>
+</div>
 
-			<div class="overskrift">
-
-
-
-<div class="hero-image">
-    <h1 class="hero-heading"> 02.02.2024 - 25.01.2024</h1>
-<h1 class="hero-heading1">Copenhagen light festival</h1>
-<img src="/pics/image1.svg" alt="image1">
-<img src="/pics/image2.svg" alt="image2">
-<img src="/pics/image3.svg" alt="image3">
-<img src="/pics/image4.svg" alt="image4">
-		</div>
-
-        <style>
-            .hero-heading {
-	 position: absolute;
-    top: 30%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    margin: 0;
-    padding: 0;
-    color: aliceblue; /* Adjust the color as needed */
-    font-size: 1rem; /* Adjust the font size as needed */
-    z-index: 1; /* Ensure the heading stays above the images */
-    font-family: Arial, Helvetica, sans-serif;
-    text-transform: uppercase;
-}
- }  
-
-
-.hero-image {
-       width: 100%;
-    overflow: hidden;
-    position: relative;
-}
-.hero-image img {
-      width: 70%;
-    height: auto;
-    position: absolute;
-    top: 10%;
-    left: 15%;
-    opacity: 0;
-    animation: rotateImages 0.1s infinite;
+<style>
+   .animation-container {
+  width: 400px; /* Adjust as needed */
+  height: 400px; /* Adjust as needed */
+  position: relative;
+  perspective: 1000px;
+   margin: 0 auto;
 }
 
-@keyframes rotateImages {
-    0% { opacity: 1; }
-    33.33% { opacity: 1; }
-    66.66% { opacity: 1; }
-    100% { opacity: 1; }
-     }
+@media (min-width: 800px) {
+    .animation-container {
+        width: 850px;
+        height: 850px;
+        top: 0px;
+    }
+}
 
-        </style>
+.image {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+   background-size: contain; /* Change to 'contain' */
+  background-repeat: no-repeat; /* Ensure no repetition */
+  background-position: center;
+  transform-style: preserve-3d;
+  animation: rotatePictures 50s infinite linear; /* Adjust duration as needed */
+}
+
+.heading1,
+.heading2 {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1; /* Ensure headings are above the images */
+  color: white; /* Adjust text color */
+  font-family: Arial, Helvetica, sans-serif /* Adjust font family */
+}
+
+
+.heading1 {
+  top: 100px; /* Adjust vertical position */
+  font-size: 1rem;
+   text-align: center;
+}
+
+.heading2 {
+  top: 190px; /* Adjust vertical position */
+  font-size: 3rem;
+  text-transform: uppercase;
+}
+
+@media (min-width: 800px) {
+    .heading1 {
+        top: 230px;
+    }
+    .heading2 {
+        font-size: 4rem;
+        top: 320px
+    }
+}
+
+@keyframes rotatePictures {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+#image1 {
+  background-image: url('/pics/image1.svg');
+  transform: rotateY(0deg);
+}
+
+</style>
+

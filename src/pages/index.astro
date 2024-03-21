@@ -3,31 +3,105 @@ import Mainlayout from "./Mainlayout.astro";
 import Nyhedsbrev from "../components/Nyhedsbrev.astro";
 import Animation from "../components/Animation.astro";
 import Cards from "../components/Cards.astro"
-import Festivalmap from "../components/Festivalmap.astro"
-import Arrowdown from
 
-const data = await fetch("https://qykudgwkpukswmlhoyxc.supabase.co/rest/v1/clf?select=*", {
-	method: "GET",
-	headers: {
-		apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InF5a3VkZ3drcHVrc3dtbGhveXhjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA1MDA4MzUsImV4cCI6MjAyNjA3NjgzNX0.3NKiAvXLoozXEgUzIxcWpW1A4IR947vC84DWEsldFZk"
-	},
-}
-).then (res=>res.json())
-
-console.log (data);
 ---
 
 <Mainlayout>
-<<<<<<< HEAD
 	<Animation/>
 	<h2>Indlev dig i københavns magiske lysfestival</h2>
 	<p>Skab din ultimative oplevelse! Oplev betagende lysværker, spændende events og unikke festivaloplevelser</p>
+	<div class="pilned">
+<img class="indexpic" src="/pics/pilned.svg" alt="pilned">
+</div>
+
+<div class="individual-cards">
+	<div>
+<img src="pics/Group.svg" alt="program">
+</div>
+<p>Udforsk festivalen til fods, på cykel eller endda fra vandet</p>
+<div class="pil">
+<h3>Se Festivals map</h3>
+ <div class="triangle-side">
+    <img src="/pics/lillepil.svg" alt="lillepil">
+ </div>
+ </div>
+</div>
+
+
+
 
 <Cards/>
-<Festivalmap/>
 <Nyhedsbrev/> 
-=======
-
->>>>>>> 4145e33639f41970381f7ed981ad3253234058aa
 </Mainlayout>
+
+<style>
+ .individual-cards {
+    margin: 0 auto;
+    color: aliceblue;
+    padding-bottom: 50px;
+    padding-top: 50px;
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    
+}
+
+h3 {
+	font-family: Arial, Helvetica, sans-serif;
+	text-transform: uppercase;
+}
+
+
+.triangle-side {
+	padding-top: 15px;
+       
+}
+
+.pil {
+	display: flex;
+	justify-content: center;
+	gap: 10px;
+    padding-top: 10px;
+    
+}
+
+	h2, p {
+		font-family: Arial, Helvetica, sans-serif;
+		text-align: center;
+		margin-left: 50px;
+		margin-right: 50px;
+		line-height: 180%;
+	}
+
+	h2 {
+		text-transform: uppercase;
+	}
+
+
+.pilned {
+	padding-bottom: 20px;
+	padding-top: 20px;
+	 display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Adjust as needed */
+}
+
+.indexpic {
+    max-width: 100%;
+    max-height: 100%;
+}
+	@media (min-width: 800px) {
+		h2 {
+			font-size: 3rem;
+		}
+		p {
+			font-size: 1.5rem;
+		}
+
+
+
+	}
+
+</style>
 

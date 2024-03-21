@@ -14,7 +14,9 @@
 </div>
 <div class="pil">
 <h3>Program</h3>
- <div class="triangle-side"></div>
+ <div class="triangle-side">
+    <img src="/pics/lillepil.svg" alt="lillepil">
+ </div>
  </div>
 </div>
 
@@ -24,7 +26,9 @@
 </div>
 <div class="pil">
 <h3>Oplevelser</h3>
- <div class="triangle-side"></div>
+ <div class="triangle-side">
+    <img src="/pics/lillepil.svg" alt="lillepil">
+ </div>
  </div>
 </div>
 
@@ -36,14 +40,19 @@
 <div class="pil">
 <h3>Events
 </h3>
- <div class="triangle-side"></div>
+ <div class="triangle-side">
+    <img src="/pics/lillepil.svg" alt="lillepil">
+ </div>
  </div>
 </div>
 </div>
 
 
 <style>
-
+h3 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 100;
+}
     @media (min-width: 800px) {
 .card-boxes {
 	display: flex;
@@ -51,25 +60,25 @@
 	padding-left: 20px;
 	padding-right: 20%;
     padding-top: 100px;
+    margin: 0 auto; /* Add this line */
 }
 }
 
+
 .individual-cards {
-	padding-left: 20px;
-	padding-right: 20px;
     color: aliceblue;
     padding-bottom: 50px;
+    padding-top: 50px;
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-right: 10px;
+    
 }
 
 
 .triangle-side {
-	width: 0;
-        height: 0;
-        border-top: 20px solid transparent;
-        border-bottom: 20px solid transparent;
-        border-left: 25px solid #97D5F3; /* Blue color with 50% opacity */
-		border-right: none;
-		filter: blur(3px); /* Add blur effect */
+	padding-top: 15px;
        
 }
 
@@ -77,6 +86,7 @@
 	display: flex;
 	justify-content: center;
 	gap: 10px;
+    padding-top: 10px;
     
 }
 </style>
